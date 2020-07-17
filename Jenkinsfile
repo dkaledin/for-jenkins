@@ -9,7 +9,6 @@ pipeline {
 
       }
       steps {
-        sh 'yarn init -y'
         sh 'yarn add typescript'
       }
     }
