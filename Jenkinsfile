@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Stage 1') {
       steps {
-        sh '/usr/local/bin/docker --version'
+        sh ' ls /usr/bin && which docker'
       }
     }
 
