@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Stage 1') {
       steps {
-        sh 'docker ps -a'
+        sh 'which docker'
       }
     }
 
