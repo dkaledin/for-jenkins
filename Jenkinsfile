@@ -1,14 +1,22 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:10-alpine'
+  agent any
+  stages {
+    stage('Install') {
+      agent {
+        docker {
+          image 'node:12-alpine'
+        }
+
+      }
+      steps {
+        sh 'yarn init -y'
+        sh 'yarn add typescript'
+      }
     }
 
-  }
-  stages {
-    stage('Stage 1') {
+    stage('App Name') {
       steps {
-        sh 'docker --version'
+        input(message: 'Which App do you want to deploy?', id: 'app-name')
       }
     }
 
